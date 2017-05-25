@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mx.unam.fca.popularmoviess1.MovieDetailActivity">
+
+    <TextView
+        android:id="@+id/tvTitleMovie"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:text="@string/movie_title"
+        android:textSize="40sp"
+        android:textColor="#ffffff"
+        android:gravity="fill_vertical"
+        android:padding="5dp"
+        android:background="#009688"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivImageMovie"
+        android:layout_width="160dp"
+        android:layout_height="220dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleMovie"
+        app:layout_constraintHorizontal_bias="0.03" />
+
+    <TextView
+        android:id="@+id/tvYearMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movie_year"
+        android:textSize="28sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toRightOf="@+id/ivImageMovie"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleMovie"
+        android:layout_marginStart="5dp" />
+
+    <TextView
+        android:id="@+id/tvDurationMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movie_duration"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toRightOf="@+id/ivImageMovie"
+        app:layout_constraintTop_toBottomOf="@+id/tvYearMovie"
+        android:layout_marginStart="5dp" />
+
+    <TextView
+        android:id="@+id/tvRatingMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movie_rating"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toRightOf="@+id/ivImageMovie"
+        app:layout_constraintTop_toBottomOf="@+id/tvDurationMovie"
+        android:layout_marginStart="5dp" />
+
+    <Button
+        android:id="@+id/btFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movie_mark_favorite"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#86E4DB"
+        app:layout_constraintLeft_toRightOf="@+id/ivImageMovie"
+        app:layout_constraintTop_toBottomOf="@+id/tvRatingMovie"
+        android:layout_marginStart="5dp" />
+
+    <ScrollView
+        android:id="@+id/svSynopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/ivImageMovie"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/tvSynopsisMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:text="@string/movie_description"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp" />
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/vSeparator"
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:background="#d9dcce"
+        app:layout_constraintTop_toBottomOf="@+id/svSynopsis" />
+
+    <TextView
+        android:id="@+id/tvTrailers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movie_trailers"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/vSeparator" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvTrailersMovie"
+        android:layout_width="340dp"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTrailers" />
+
+</android.support.constraint.ConstraintLayout>
